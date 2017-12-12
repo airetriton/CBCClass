@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>crap</title>
+
+	<script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+</head>
+<body>
+	
+<div class="step-container">
+	<input type="hidden" name="quiz_step1" id="quiz_step1" value="" class="required-entry">
+    <ul>
+    	<li class="circle-btn" data-id="quiz_step1" data-value="1"><span>Oily</span></li>
+    	<li class="circle-btn" data-id="quiz_step1" data-value="2"><span>Combination</span></li>
+    	<li class="circle-btn" data-id="quiz_step1" data-value="3"><span>Normal</span></li>
+    	<li class="circle-btn" data-id="quiz_step1" data-value="4"><span>Dry</span></li>
+    	<li class="circle-btn" data-id="quiz_step1" data-value="5"><span>Sensitive</span></li>
+    </ul>
+</div>
+
+    
+	<script type="text/javascript">
+		
+
+	$('.circle-btn').on('click', function() {
+    	var btnValue = $(this).data('value');
+    	var inputField = '#' + $(this).data('id');
+ 	    $(inputField).val( btnValue );
+ 	    $(this).siblings('.circle-btn').removeClass('selected');
+		$(this).addClass('selected');
+	});
+
+	console.log()
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Favorite TV Shows</title>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+
+      // Enter 5 favorite TV Shows - create the array
+      var favTVshows = [];
+      var tvShow;
+
+      // For Loop Elements Repeats 3 Times, 
+      for (var i = 1; i < 4; i++) {
+
+        // Asks to enter the information  - i = the number from the variable formula
+        tvShow = prompt("What's your #" + i + " favorite TV show?");
+
+        // pushes the names entered into the array that is blank above.
+        favTVshows.push(tvShow); //push puts it into next spot in the array, typically starting at zero
+      }
+
+      // created the variable - want to create different variables (select a letter - just the interator) to separate loops (anytime you have multiple loops)
+      for (var j = 0; j < favTVshows.length; j++) {
+
+        // ???
+        alert(favTVshows[j]);
+      }
+
+    </script>
+
+  </body>
+</html>

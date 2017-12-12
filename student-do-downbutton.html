@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>CountDown Button with Firebase!</title>
+
+    <script src=""></script>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+
+  </head>
+
+  <body>
+
+    <h1>Only <span id="click-value"></span> clicks to go!!</h1>
+
+    <button id="click-button">Click Me!!!!</button>
+    <button id="restart-button">Restart</button>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Script -->
+    <script src="logic.js"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+
+  <script>
+     
+    var config = {
+    apiKey: "AIzaSyCsLWAHAQMgqV3EEslSW1YPfKogItyeCSg",
+    authDomain: "classproject-8119e.firebaseapp.com",
+    databaseURL: "https://classproject-8119e.firebaseio.com",
+    projectId: "classproject-8119e",
+    storageBucket: "classproject-8119e.appspot.com",
+    messagingSenderId: "658003442617"
+  };
+  firebase.initializeApp(config);
+
+
+  var database = firebase.database();
+  var clickCounter =0;
+
+
+    $("#click-button").on("click", function() {
+      clickCounter++;
+      database.ref().set({
+        clickCount: clickCounter
+      });
+    });
+
+    database.ref().on("value", function(snapshot) {
+      console.log(snapshot.val());
+      $("#click-value").text(snapshot.val().clickCount);
+      clickCounter = snapshot.val().clickCount;
+    }, function(errorObject) {
+      console.log("The read failed: " + errorObject.code);
+    });
+
+    $("#restart-button").on("click", function() {
+      clickCounter = initialValue;
+      database.ref().set({
+        clickCount: clickCounter
+      });
+    });
+
+
+
+
+  </script>
+  </body>
+
+</html>

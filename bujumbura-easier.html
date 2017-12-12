@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Bujumbura Data</title>
+</head>
+
+<body>
+  <!-- Retrieved data will be dumped here -->
+  <div class="city"></div>
+  <div class="wind"></div>
+  <div class="humidity"></div>
+  <div class="temp"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // This is our API key. Add your own API key between the ""
+    var APIKey = "e72a51c0e7c9fcf4f35d3f2e962af0c9";
+
+    // Here we are building the URL we need to query the database
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Bujumbura,Burundi&units=imperial&appid=" + APIKey;
+
+    //always read the API documentation to see if they have other suggesions for adding things like converting Kelvin to imperial.
+
+    // We then created an AJAX call
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).done(function(response) {
+
+
+      //the response word could be anything...you just need something that makes sense and then use it all along...bob.wind.speed or bob.main.speed
+      // Create CODE HERE to Log the queryURL
+      console.log(queryURL);
+      // Create CODE HERE to log the resulting object
+      console.log(response);
+      // Create CODE HERE to transfer content to HTML
+      
+
+      function displayWeather(cityName, windSpeed, humidity, temperature){
+
+        $(".city").html(response.name);
+        $(".wind").text(response.wind.speed);
+        $(".humidity").text(response.main.humidity);
+        $(".temp").text(response.main.temp);
+      };
+
+      displayWeather()
+
+      // Create CODE HERE to calculate the temperature (converted from Kelvin)
+      // Hint: To convert from Kelvin to Fahrenheit: F = (K - 273.15) * 1.80 + 32
+
+    function toFahrenheit(kelvin) {
+      return (kelvin 273.15) * 1.80 + 32
+    }
+
+    //this function is not complete
+
+      // Create CODE HERE to dump the temperature content into HTML
+
+    });
+
+  </script>
+</body>
+
+</html>

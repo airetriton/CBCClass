@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+<script type="text/javascript">
+
+
+
+
+var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+url += '?' + $.param({
+  'api-key': "9e7dd7db96294a85a6c4cd8d9c2d50ca", 'q': "bill clinton", 'meta.hits': "5"
+});
+
+
+var firstCall;
+var secondCall;
+var finalResult= [];
+var resultLimit= 5;
+var limitCounter = 0;
+
+$.ajax({
+  url: url,
+  method: 'GET',
+}).done(function(result) {
+	firstCall = result.response.docs;
+	for(i=0; i<firstCall.length; i++){
+		finalResult.push(firstCall[i]);
+	}
+	
+
+	// $.ajax({
+ //  url: url+="&page=1",
+ //  method: 'GET',
+	// 	}).done(function(result) {
+	// secondCall = result.response.docs;
+	// for(i=0; i<secondCall.length; i++){
+	// 	finalResult.push(secondCall[i]);
+	// }
+	
+
+	// firstCall.forEach(finalResult.push());
+	// firstCall = result.response.docs;
+	// finalResult.push(firstCall);
+	
+	while(limitCounter<resultLimit){
+		var article = $("<div>");
+
+		console.log(finalResult[limitCounter].headline.main);
+		article.append(finalResult[limitCounter].headline.main);
+		document.write(article);
+		limitCounter++;
+}
+
+	console.log(article);
+
+  console.log(secondCall);
+
+// }).fail(function(err) {
+//   throw err;
+
+// });
+//   console.log(firstCall);
+
+}).fail(function(err) {
+  throw err;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <title>Car Game
+  </title>
+</head>
+<body>
+  <div id="game">
+  <h1>Car Adventurers!</h1>
+  <h3>Type "h" to honk, "d" to drive to work, "w" to dirve around the world, or "t" to get a tuneup.</h3>
+  <p>See console for car stats.</p>
+  
+
+  </div>
+
+  <script type="text/javascript">
+    
+    var car = {
+        make: "Honda",
+        model: "Fit",
+        color: "Blue Raspberry",
+        mileage: 3000,
+        isWorking: true,
+
+      // Creates an array that lists out all of the options (h-honk, d-drive to work, w - drive around the world, t - get a tuneup).
+    
+        var userGuess = ["h", "d", "w", "t"];
+    
+      // This function is run whenever the user presses a key.
+ 
+          document.onkeyup = function(event) {    
+
+
+      // Determines which key was pressed.
+          var userGuess = event.key;
+
+          if(userGuess==="d") {
+            car.driveToWork();
+            
+          }
+
+          rewriteStats();
+         } 
+    
+      // functions.
+          
+          driveToWork: function work(drive) {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 8;
+
+          alert("New mileage: " + this.mileage);
+        },
+
+        driveAroundWorld: function(world) {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 24000;
+
+          alert("New Mileage: " + this.mileage);
+          alert("Car needs a tuneup!");
+
+          this.isWorking = false;
+        },
+
+        getTuneUp: function(tuneup) {
+          alert("Car is ready to go!");
+          this.isWorking = true;
+        },
+
+        honk: function(honk) {
+          alert("Honk! Honk!");
+        }
+      };
+
+        function rewriteStats() {
+          console.log(car.make);
+          console.log(car.mileage)
+        }
+    
+      // Alerts the key the user pressed (userGuess).
+      alert("User guess: " + userGuess);
+    
+      
+
+    //this is tie, change the tie number only for the user
+
+    if (userGuess ==== "h"); {
+        alert("Honk!Honk!");
+    }
+
+    else if (userGuess === "d"); {
+      alert ("You have increased your mileage to +"New Mileage"+);
+    }
+
+    else if (userGuess === "w"); {
+      userWins++;
+    }
+    
+    else (userGuess === "t"); {
+      userLoses++;
+    }
+    
+
+
+  }
+
+
+    var html = 
+    "<p>You chose: " + userGuess + "</p>" +
+
+      //not valid for this project
+    <!-- We have to put this at the end of our document to ensure the user-text
+         span exists when we try to access it. -->
+    <script type="text/javascript">
+      // Let's start by grabbing a reference to the <span> below.
+      var userText = document.getElementById("user-text");
+      // Next, we give JavaScript a function to execute when onkeyup event fires.
+      document.onkeyup = function(event) {
+        userText.textContent = event.key;
+      };
+    </script>
+
+    
+
+  </script>
+</body>
+</html>
+
+
+<!--
+  || computerGuess === "s"
+
+  //select number of players
+  //decide of you are r, p, s
+  //pause for count of three
+  //player displays choice
+  //who wins based on rules
+    //r beats s
+    //r lose p
+    //r ties r
+    //p beats r
+    //p lose s
+    //p ties p
+    //s beats p
+    //s lose r
+    //s ties s
+  //keep score of wins, losses, ties 

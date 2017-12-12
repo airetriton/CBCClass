@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8"
+	<title>JQuery</title>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+	<h1>Drink Selection!</h1>
+	<hr>
+
+
+	<!--generic drink options-->
+
+	<div id="drinkOptions"></div>
+
+	<script type="text/javascript">
+		
+		//Array - drinks available
+
+		var drinkList = [
+
+		'Coffee: $5'
+		'Espresso: $7'
+		'Cappuccino: $6'
+		'Latte: $4'
+		'Tea: $3'
+		'Ice Coffee: $6'
+		'Ice Espresso: $8'
+		'Ice Latte: $6'
+		'Ice Tea: $4'
+
+		];
+
+		//javascript grabs the div with the matching id
+
+		var drinkDiv = document.getElementByID("drinkOptions");
+
+		//for loop then looops through the drink list..
+
+		for (var i = 0; i < drinkList.length; i++){
+
+			//then creates new div for each drink
+
+			var newDrinkDiv = document.createElement("div");
+
+			//makes the contents of this new div the drink and price
+
+			newDrinkDiv.innterHTML = drinkList[i];
+
+			//then adds this new div to drinkList div
+
+			drinkDiv.appendChild(newDrinkDiv)
+		}
+
+
+
+
+
+	</script>
+</body>
+</html>

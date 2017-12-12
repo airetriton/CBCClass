@@ -1,0 +1,73 @@
+
+body {
+	max-width: 960px
+
+}
+
+
+
+.header {
+	background-color: #ffffff;
+	border-color: #cccccc
+	overflow: hidden;
+}
+
+.header h1 {
+	background-color: #4aaaa5;
+	float: left;
+	text-align: center;
+	color: white;
+	padding: 30px;
+}
+
+div .box1 {
+	background-image: "..//images/greyfloral.png"
+}
+
+
+
+maincontent {
+	background-color: #ffffff;
+	border-color: #dddddd
+	box-sizing: border-box;
+	width: 650px;
+	height: 570px;
+	overflow: scroll;
+
+}
+
+maincontent h1 {
+	color: #4aaaa5;
+	padding-bottom: 20px;
+}
+
+.sidebar {
+	background-color: #ffffff;
+	width: 270px;
+	height: 190px;
+	float: right;
+}
+
+img .sidebar {
+	
+
+}
+footer {
+	background-color: #666666
+	border-top: 10px solid #4aaaa5;
+}
+
+
+<!--h1:after {
+	content:'';
+  	position:absolute;
+  	display:block;
+  	top:13.5%;
+  	height:5px;
+  	width: 960px;
+  	background:#dddddd;
+  	left:50%;
+  	z-index:1;
+  	transform:translateX(-50%);
+  	-webkit-transform:translateX(-50%)
+}-->

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Loops</title>
+  </head>
+  <body>
+    <h1>Open the console to see the magic!</h1>
+    <script>
+      // Array of zoo animals.
+      var zooAnimals = ["Zebra", "Rhino", "Giraffe", "Owl"];
+      // Rewrite the following code to print all of the animals using a for-loop.
+
+      for (var i = 0; i < zooAnimals.length; i++) {
+        console.log(zooAnimals[i]);
+        alert(zooAnimals[i]);
+
+      }
+
+ 
+
+        function logArray(list) {
+          for (var j = 0; j < list.length; j++) {
+            console.log(list[j]);
+          }
+        }
+          //make sure to define what the logArray is (below)
+        logArray(zooAnimals);
+
+
+        //looping a certain number of times
+        //change out the middle equation of i < zooAnimals.length to i < 4
+
+        //checking the name of the animal
+
+        var animalName = zooAnimals[j];
+
+        if (animalName.charAt(0) ==="c") {
+          alert (animalName);
+        } else if (animalName.charAt (0) === "o") {
+          alert (animalName)
+        }
+
+        //better syntax
+
+        if (animalName.charAt(0) === "c" || animalName.charAt (0) ==="o") {
+          alert(animalName)
+        }
+
+        //could do
+
+        var testCharacter  = animalName.charAt(0)
+
+        if (testCharacter === "c" || testCharacter === "o") {
+          alert(animalName)
+        }
+
+
+
+
+        
+
+          var x = ""
+
+
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>lexicalScope</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+
+    // Run this program. Then turn to the person next to you and answer the following questions:
+    // 1. What is the difference (in output) between Situation 1 and Situation 2?
+    // 2. Why are the alert messages different? (Hint: Look for syntax differences)
+
+    // Situation 1
+    // ------------------------------------------
+    var myVar1 = 1; //variable declared
+
+    function a1() {  // code won't run until line 28, 
+      myVar1 = 5 - 3; //variable being redifined 
+      b1();   //calls the function below to run the alert from b1
+      alert("Q1 | a: " + myVar1); // will run this alert
+    }
+
+    function b1() {
+      alert("Q1 | b: " + myVar1);
+    }
+    a1();
+
+
+    // Situation 2
+    // ------------------------------------------
+    var myVar2 = 1; //variable declared globally
+
+    function a2() {  
+      var myVar2 = 5 - 3;  //declaring variable (not redefining) locally
+      b2();  //when calling this function it can't see the newly declared variable because it is inside the house (locally) and so the funciton b2 cannot see the newly defined variable
+      alert("Q2 | a: " + myVar2);
+    }
+
+    function b2() {//this is global or outside of the house so it cannot see the var myVar2 that is inside of the function a2
+      alert("Q2 | b: " + myVar2);
+    }
+    a2();
+
+  </script>
+</body>
+</html>

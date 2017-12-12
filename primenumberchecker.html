@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>prime</title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+	//one way	
+		function isPrime(value) {
+    		for(var i = 2; i < value; i++) {
+        if(value % i === 0) {
+            return false;
+        }
+    }
+    return value > 1;
+		consule.log("value", result);
+    }
+
+
+    //another way
+
+//     function nextPrime(value) {
+//     if (value > 2) {
+//         var i, q;
+//         do {
+//             i = 3;
+//             value += 2;
+//             q = Math.floor(Math.sqrt(value));
+//             while (i <= q && value % i) {
+//                 i += 2;
+//             }
+//         } while (i <= q);
+//         return value;
+//     }
+//     return value === 2 ? 3 : 2;
+// }
+
+//solutions
+
+// Prime Checker: SOLUTION
+// =======================
+
+// Declare our primeCheck function
+function primeCheck(number) {
+
+  // Loop to check to see if a number has divisors other than one and itself.
+  // Note: Loops from two to one less than the number we're checking.
+  for (var i = 2; i < number; i++) {
+
+    // If the number is evenly divisible
+    // by a number between two and one less than itself,
+    // then it is not prime.
+    if (number % i === 0) {
+
+      // So return false.
+      return false;
+    }
+  }
+
+  // A prime number has to be greater than one,
+  // even if it has a divisor other than one and itself.
+  return number > 1;
+}
+
+
+
+
+
+
+
+//other solutions
+
+function isPrime(number) {
+    var start = 2;
+    while (start <= Math.sqrt(number)) {
+        if (number % start++ < 1) return false;
+    }
+    return number > 1;
+}
+
+isPrime(3);
+
+//othersolutions
+	<script type="text/javascript">
+ 	function prime (num){
+    	for(var i = 2; i < Math.floor(num/2+1); i++){
+        	if(num % i === 0){
+            	return(false);
+        }
+    }
+    return true;
+ }
+
+ //other solutions 
+
+ var isPrime = function (n) {
+  if (n<2) {
+    return false
+    
+ }else if (n == 2) {
+    return true
+  }
+  for (var i = 2; i < n; i++) {
+  	//if this is divisable by anything else return false
+    if (n%i === 0) {
+      return false
+    }else if (i === n-1) {
+      return true
+    }
+  }
+}
+//this is where you put the prime number to test the system.
+console.log(isPrime(7));
+
+//other solutions
+
+function isPrime(num){
+  return (num % 2 === 0 && num !== 2) ? false : (num % 3 === 0 && num !== 3) ? false : (num % 4 === 0 && num !== 4) ? false : (num % 5 === 0 && num !== 5) ? false : (num % 6 === 0 && num !== 6) ? false : (num % 7 === 0 && num !== 7) ? false : (num % 8 === 0 && num !== 8) ? false : (num % 9 === 0 && num !== 9) ? false : (num % 10 === 0 && num !== 10) ? false : true;
+}
+alert(isPrime(6));
+
+
+
+
+
+</script>
+
+
+
+	</script>
+
+</body>
+</html>
